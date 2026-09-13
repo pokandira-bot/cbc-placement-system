@@ -19,13 +19,33 @@ let students = [];
 if(fs.existsSync(SCHOOLS_FILE)){
   schools = JSON.parse(fs.readFileSync(SCHOOLS_FILE));
 } else {
-  schools = [
-    { id: 1, name: 'Alliance High School', county: 'Kiambu', cutoff: 75, capacity: 50, enrolled: 0, pathway: 'STEM', subjects: ['Mathematics','Physics','Chemistry','Computer Studies'] },
-    { id: 2, name: 'Sigalagala National Polytechnic', county: 'Kakamega', cutoff: 45, capacity: 100, enrolled: 0, pathway: 'STEM', subjects: ['Electrical','Mechanical','Building','Agriculture'] },
-    { id: 3, name: 'Kisumu Arts & Talent Center', county: 'Kisumu', cutoff: 40, capacity: 60, enrolled: 0, pathway: 'Arts & Sports Science', subjects: ['Music','Theatre','Sports Science','Art & Design'] },
-    { id: 4, name: 'Nairobi Social Sciences College', county: 'Nairobi', cutoff: 50, capacity: 80, enrolled: 0, pathway: 'Social Sciences', subjects: ['History','Business','Languages','Geography'] }
+   schools = [
+    { id: 1, name: 'Alliance High School', county: 'Kiambu', cutoff: 75, capacity: 500, enrolled: 0, pathway: 'STEM', subjects: ['Mathematics','Physics','Chemistry']},
+    { id: 2, name: 'Alliance Girls High School', county: 'Kiambu', cutoff: 74, capacity: 400, enrolled: 0, pathway: 'STEM', subjects: ['Mathematics','Biology','Chemistry']},
+    { id: 3, name: 'Kenya High School', county: 'Nairobi', cutoff: 73, capacity: 400, enrolled: 0, pathway: 'STEM', subjects: ['Mathematics','Physics','Chemistry']},
+    { id: 4, name: 'Mangu High School', county: 'Kiambu', cutoff: 72, capacity: 400, enrolled: 0, pathway: 'STEM', subjects: ['Mathematics','Physics','Chemistry']},
+    { id: 5, name: 'Starehe Boys Centre', county: 'Nairobi', cutoff: 71, capacity: 400, enrolled: 0, pathway: 'STEM', subjects: ['Mathematics','Physics','Chemistry']}
   ];
+  
+  // AUTO ADD 995 MORE SCHOOLS FOR ALL 47 COUNTIES
+  const counties = ["Mombasa","Kwale","Kilifi","Tana River","Lamu","Taita Taveta","Garissa","Wajir","Mandera","Marsabit","Isiolo","Meru","Tharaka Nithi","Embu","Kitui","Machakos","Makueni","Nyandarua","Nyeri","Kirinyaga","Muranga","Kiambu","Turkana","West Pokot","Samburu","Trans Nzoia","Uasin Gishu","Elgeyo Marakwet","Nandi","Baringo","Laikipia","Nakuru","Narok","Kajiado","Kericho","Bomet","Kakamega","Vihiga","Bungoma","Busia","Siaya","Kisumu","Homa Bay","Migori","Kisii","Nyamira","Nairobi"];
+  let nextId = 6;
+  counties.forEach(c => {
+    schools.push({ id: nextId++, name: `${c} Boys High School`, county: c, cutoff: 60, capacity: 350, enrolled: 0, pathway: 'STEM', subjects: ['Mathematics','Physics','Chemistry']});
+    schools.push({ id: nextId++, name: `${c} Girls High School`, county: c, cutoff: 60, capacity: 350, enrolled: 0, pathway: 'Social Sciences', subjects: ['History','Geography','CRE']});
+    schools.push({ id: nextId++, name: `${c} Mixed Secondary`, county: c, cutoff: 45, capacity: 300, enrolled: 0, pathway: 'Arts & Sports Science', subjects: ['Music','Art','Sports']});
+    schools.push({ id: nextId++, name: `St. ${c} Mixed Day Secondary`, county: c, cutoff: 35, capacity: 200, enrolled: 0, pathway: 'STEM', subjects: ['Mathematics','Agriculture','Biology']});
+  });
+  // Special Kakamega schools for you
+  ["Musingu High School","Kakamega High School","Butere Girls High School","Butere Boys High School","Mumias Boys High","Mumias Girls High","Lubinu Boys High","Shikoti Girls","Shianda Mixed Secondary","Mukumu Boys","Mukumu Girls","Malava Boys","Malava Girls","Kabras Boys","Bunyore Girls","Lirhembe Girls","Sigalagala High School"].forEach(name => {
+    schools.push({ id: nextId++, name, county: 'Kakamega', cutoff: 50, capacity: 300, enrolled: 0, pathway: 'STEM', subjects: ['Mathematics','Physics','Chemistry']});
+  });
+  while(schools.length < 1000){
+    let county = counties[schools.length % 47];
+    schools.push({ id: nextId++, name: `${county} ${schools.length} Day Secondary`, county, cutoff: 30, capacity: 180, enrolled: 0, pathway: ['STEM','Social Sciences','Arts & Sports Science'][schools.length%3], subjects: ['Mathematics','English','Kiswahili']});
+  }
   fs.writeFileSync(SCHOOLS_FILE, JSON.stringify(schools, null, 2));
+  
 }
 
 if(fs.existsSync(STUDENTS_FILE)){
