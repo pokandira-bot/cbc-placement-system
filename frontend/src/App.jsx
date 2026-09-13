@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-const API = import.meta.env.VITE_API_URL || 'http://localhost:5000'
+const API = ''
 
 export default function App(){
   const [tab,setTab]=useState('dashboard')
