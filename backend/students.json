@@ -1,0 +1,54 @@
+[
+  {
+    "id": 1789281670446,
+    "name": "peter",
+    "average": 82,
+    "pathway": "Social Sciences",
+    "interestSubject": "computer",
+    "preferredCounty": "kiambu",
+    "placedSchools": [
+      {
+        "id": 4,
+        "name": "Nairobi Social Sciences College",
+        "county": "Nairobi",
+        "cutoff": 50,
+        "capacity": 80,
+        "enrolled": 1,
+        "pathway": "Social Sciences",
+        "subjects": [
+          "History",
+          "Business",
+          "Languages",
+          "Geography"
+        ]
+      }
+    ],
+    "date": "9/13/2026, 9:41:10 AM"
+  },
+  {
+    "id": 1789283912589,
+    "name": "john",
+    "average": 60,
+    "pathway": "Arts & Sports Science",
+    "interestSubject": "computer",
+    "preferredCounty": "kakamega",
+    "placedSchools": [
+      {
+        "id": 3,
+        "name": "Kisumu Arts & Talent Center",
+        "county": "Kisumu",
+        "cutoff": 40,
+        "capacity": 60,
+        "enrolled": 1,
+        "pathway": "Arts & Sports Science",
+        "subjects": [
+          "Music",
+          "Theatre",
+          "Sports Science",
+          "Art & Design"
+        ]
+      }
+    ],
+    "date": "9/13/2026, 10:18:32 AM"
+  }
+]

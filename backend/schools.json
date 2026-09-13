@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Alliance High School",
+    "county": "Kiambu",
+    "cutoff": 75,
+    "capacity": 50,
+    "enrolled": 0,
+    "pathway": "STEM",
+    "subjects": [
+      "Mathematics",
+      "Physics",
+      "Chemistry",
+      "Computer Studies"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Sigalagala National Polytechnic",
+    "county": "Kakamega",
+    "cutoff": 45,
+    "capacity": 100,
+    "enrolled": 0,
+    "pathway": "STEM",
+    "subjects": [
+      "Electrical",
+      "Mechanical",
+      "Building",
+      "Agriculture"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Kisumu Arts & Talent Center",
+    "county": "Kisumu",
+    "cutoff": 40,
+    "capacity": 60,
+    "enrolled": 1,
+    "pathway": "Arts & Sports Science",
+    "subjects": [
+      "Music",
+      "Theatre",
+      "Sports Science",
+      "Art & Design"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Nairobi Social Sciences College",
+    "county": "Nairobi",
+    "cutoff": 50,
+    "capacity": 80,
+    "enrolled": 1,
+    "pathway": "Social Sciences",
+    "subjects": [
+      "History",
+      "Business",
+      "Languages",
+      "Geography"
+    ]
+  }
+]
